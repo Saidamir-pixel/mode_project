@@ -1,0 +1,420 @@
+@font-face {
+  font-family: 'Exo';
+  src: url('/assets/fonts/exo/Exo-Black.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+body {
+  font-family: 'Exo', sans-serif; /* Используем шрифт Roboto для текста внутри body */
+  font-size: 16px;
+  font-family: "Helvetica", "Arial", sans-serif;
+  text-align: center;
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.parallax-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.parallax-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/pictures/back.jpg'); /* Путь к вашему изображению */
+  background-size: cover;
+  background-position: center;
+  transform: translateZ(-1px) scale(1.5);
+  z-index: -1;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 100px 20px;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 18px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 10px;
+  background: transparent;
+  backdrop-filter: blur(7px);
+}
+
+.logo {
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.links {
+  display: flex;
+  gap: 50px;
+}
+
+.links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Модальное окно */
+.modal {
+  color: #fff;
+  display: none;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Темный цвет фона с прозрачностью */
+}
+
+/* Контент модального окна */
+.modal-content {
+  background-color: #362e52; /* Цвет фона */
+  margin: 15% auto; /* Отступы от краев */
+  padding: 20px;
+  border-radius: 10px; /* Скругленные углы */
+  max-width: 400px; /* Максимальная ширина контента */
+  position: relative; /* Для позиционирования кнопки X */
+}
+
+/* Заголовок модального окна */
+.modal-header {
+  color: #fff; /* Цвет текста */
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Закрывающая кнопка */
+.close {
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #ccc;
+}
+
+/* Модальное окно таймера */
+.modal-con {
+  color: #fff;
+  display: none;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Темный цвет фона с прозрачностью */
+}
+
+/* Контент модального окна */
+.modal-content-con {
+  background-color: #362e52; /* Цвет фона */
+  margin: 15% auto; /* Отступы от краев */
+  padding: 20px;
+  border-radius: 10px; /* Скругленные углы */
+  max-width: 400px; /* Максимальная ширина контента */
+  position: relative; /* Для позиционирования кнопки X */
+}
+
+/* Закрывающая кнопка */
+.close-con {
+  color: #fff;
+  font-size: 60px;
+  font-weight: bold;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  cursor: pointer;
+}
+
+.close-con:hover {
+  color: #ccc;
+}
+
+/* Текст в модальном окне */
+.modal-con-text {
+  color: #fff; /* Цвет текста */
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+
+.bubbly-button {
+  font-family: "Helvetica", "Arial", sans-serif;
+  display: inline-block;
+  font-size: 1em;
+  padding: 1em 2em;
+  margin-top: 50px;
+  margin-bottom: 60px;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #00fffc;
+  color: #000000;
+  font-weight: 600;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+  box-shadow: 0 2px 25px #00fffc;
+}
+
+.bubbly-button:focus {
+  outline: 0;
+}
+
+.bubbly-button:before,
+.bubbly-button:after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 140%;
+  height: 100%;
+  left: -20%;
+  z-index: -1000;
+  transition: all ease-in-out 0.5s;
+  background-repeat: no-repeat;
+}
+
+.bubbly-button:before {
+  display: none;
+  top: -75%;
+  background-image: radial-gradient(circle, #00fffc 20%, transparent 20%), radial-gradient(circle, transparent 20%, #00fffc 20%, transparent 30%), radial-gradient(circle, #00fffc 20%, transparent 20%), radial-gradient(circle, #00fffc 20%, transparent 20%), radial-gradient(circle, transparent 10%, #00fffc 15%, transparent 20%), radial-gradient(circle, #00fffc 20%, transparent 20%), radial-gradient(circle, #00fffc 20%, transparent 20%), radial-gradient(circle, #00fffc 20%, transparent 20%), radial-gradient(circle, #00fffc 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+}
+
+.bubbly-button:after {
+  display: none;
+  bottom: -75%;
+  background-image: radial-gradient(circle, #00fffc 20%, transparent 20%), radial-gradient(circle, #00fffc 20%, transparent 20%), radial-gradient(circle, transparent 10%, #00fffc 15%, transparent 20%), radial-gradient(circle, #00fffc 20%, transparent 20%), radial-gradient(circle, #00fffc 20%, transparent 20%), radial-gradient(circle, #00fffc 20%, transparent 20%), radial-gradient(circle, #00fffc 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+}
+
+.bubbly-button:active {
+  transform: scale(0.9);
+  background-color: #00fffc;
+  box-shadow: 0 2px 25px rgba(255, 0, 130, 0.2);
+}
+
+.bubbly-button.animate:before {
+  display: block;
+  animation: topBubbles ease-in-out 0.75s forwards;
+}
+
+.bubbly-button.animate:after {
+  display: block;
+  animation: bottomBubbles ease-in-out 0.75s forwards;
+}
+
+@keyframes topBubbles {
+    0% {
+      background-position:
+        5% 90%, 10% 90%, 10% 90%,
+        15% 90%, 25% 90%, 25% 90%,
+        40% 90%, 55% 90%, 70% 90%;
+    }
+
+    50% {
+      background-position:
+        0% 80%, 0% 20%, 10% 40%,
+        20% 0%, 30% 30%, 22% 50%,
+        50% 50%, 65% 20%, 90% 30%;
+    }
+
+    100% {
+      background-position:
+        0% 70%, 0% 10%, 10% 30%,
+        20% -10%, 30% 20%, 22% 40%,
+        50% 40%, 65% 10%, 90% 20%;
+      background-size: 0% 0%,
+        0% 0%, 0% 0%, 0% 0%,
+        0% 0%, 0% 0%;
+    }
+}
+
+@keyframes bottomBubbles {
+  0% {
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+  }
+
+  50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
+  }
+
+  100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+
+#formContainer {
+  background-color: #5d4e78; /* фиолетовый цвет фона контейнера формы */
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  max-width: 400px; /* максимальная ширина контейнера формы */
+  margin: 0 auto; /* центрирование по горизонтали */
+  opacity: 1; /* начальная прозрачность */
+  transform: translateY(-20px); /* начальное смещение вверх */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* плавные переходы */
+}
+  
+#formContainer.hide {
+  opacity: 0; /* прозрачность при скрытии формы */
+  transform: translateY(20px); /* смещение вниз при скрытии */
+}
+  
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+#timer-data-sub {
+  background-color: #5d4e78; /* фиолетовый цвет фона контейнера формы */
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 2 0px;
+  max-width: 400px; /* максимальная ширина контейнера формы */
+  margin: 0 auto; /* центрирование по горизонтали */
+  opacity: 1; /* начальная прозрачность */
+  transform: translateY(-20px); /* начальное смещение вверх */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* плавные переходы */
+}
+  
+input[type="text"] {
+  background-color: #73629b; /* темный фиолетовый цвет для текстового поля */
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  color: #fff; /* белый текст */
+}
+  
+input[type="text"]::placeholder {
+  color: #ccc; /* серый цвет для плейсхолдера в текстовом поле */
+}
+  
+button[type="submit"] {
+  background-color: #333; /* черный цвет кнопки отправки */
+  color: #fff; /* белый текст на кнопке */
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+  
+button[type="submit"]:hover {
+  background-color: #555; /* более темный оттенок черного при наведении */
+}
+  
+#firstText, #secondText {
+  color: #fff; /* белый цвет текста */
+  margin-top: 20px;
+}
+  
+#timerDisplay {
+  color: #fff; /* белый цвет текста таймера */
+}
+
+
+@media only screen and (max-width: 768px) {
+
+  .logo {
+    text-shadow: 4px 4px 6px rgba(79, 79, 156, 1);
+    margin-top: 20px;
+  }
+  .links a {
+    margin-top: 20px;
+    background-color: #5d4e78;
+    text-shadow: 4px 4px 6px rgba(65, 3, 104, 1);
+    font-weight: bold;
+    border-radius: 4px;
+    box-shadow: 0 2px 25px #00fffc;
+    padding: 7px;
+  }
+  
+  @keyframes bgAnimation {
+    0% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(10px);
+    }
+  }
+}
+
+/* Медиа-запрос для адаптации к ландшафтной ориентации */
+@media (orientation: landscape) {
+    .content {
+        padding: 50px 10px; /* Уменьшаем паддинги */
+        font-size: 14px; /* Уменьшаем размер шрифта для более компактного вида */
+    }
+
+    .header {
+        flex-direction: row; /* Удостоверяемся, что все элементы в header выстраиваются в ряд */
+        justify-content: space-between; /* Распределяем элементы равномерно */
+        padding: 10px; /* Уменьшаем паддинг */
+    }
+
+    .modal-content, .modal-content-con {
+        max-width: 90%; /* Увеличиваем максимальную ширину модального окна для лучшего использования пространства */
+        padding: 15px; /* Уменьшаем паддинг внутри модальных окон */
+    }
+
+    .links {
+        flex-direction: row; /* Убедимся, что ссылки тоже выстроены в ряд */
+        gap: 20px; /* Уменьшаем промежуток между ссылками */
+    }
+
+    .bubbly-button {
+        padding: 0.5em 1em; /* Уменьшаем размеры кнопок */
+        font-size: 0.8em; /* Уменьшаем размер текста в кнопках */
+    }
+
+    .logo, .links a {
+        font-size: 16px; /* Уменьшаем размер шрифта для логотипа и ссылок */
+    }
+}
+
+  
+  

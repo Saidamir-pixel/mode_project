@@ -1,0 +1,172 @@
+body {
+    font-family: 'Exo', sans-serif;
+    font-size: 16px;
+    font-family: "Helvetica", "Arial", sans-serif;
+    text-align: center;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.parallax-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.parallax-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/pictures/back.jpg'); /* Путь к вашему изображению */
+    background-size: cover;
+    background-position: center;
+    transform: translateZ(-1px) scale(1.5);
+    z-index: -1;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 10px;
+    background: transparent;
+    backdrop-filter: blur(8px);
+}
+
+.logo {
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.links {
+    display: flex;
+    gap: 50px;
+}
+
+.links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.main-content {
+    background-color: #5d4e78;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 250%; /* Увеличиваем ширину в 2,5 раза */
+    margin: 20px auto; 
+    opacity: 1;
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%) scale(1); /* Масштабируем блок в 2,5 раза */
+}
+
+.main-content p, h4 {
+    font-size: 30px;
+}
+
+
+/* Стилизация шапки и бургер-меню */
+
+.burger-menu {
+  display: none; /* Скрыть на десктопах */
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.burger-menu div {
+  width: 30px; /* Ширина линий бургер-меню */
+  height: 3px; /* Высота линий */
+  background-color: white;
+  transition: transform 0.3s ease;
+}
+
+/* Переопределение стилей при активации */
+.burger-menu.active div:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger-menu.active div:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-menu.active div:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+@media only screen and (max-width: 768px) {
+
+  .logo {
+    text-shadow: 4px 4px 6px rgba(79, 79, 156, 1);
+  }
+
+  .burger-menu {
+      display: flex;
+  }
+  
+  .links {
+      display: none;
+      position: absolute;
+      top: 60px; /* Расстояние от верха шапки */
+      right: 0;
+      left: 0;
+      flex-direction: column;
+      align-items: center;
+      background-color: rgba(93, 78, 120, 0.9); /* Фон ссылок, гармонирующий с шапкой */
+      transition: transform 0.5s ease;
+      border-radius: 4px;
+      margin: auto;
+      margin-top: 30px;
+      max-width: 200px;
+      box-shadow: 0 2px 25px #00fffc;
+  }
+  #a1 {
+    margin: 30px 0 0 0;
+  }
+  #a2 {
+    margin: 0 0 30px 0;
+  }
+  
+  .links.active {
+      display: flex;
+      transform: translateY(0);
+  }
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    /* Стили для мобильных устройств */
+    .parallax-bg {
+      background-image: url('/assets/pictures/back.jpg'); /* замените на изображение для мобильных устройств */
+      background-size: cover;
+      height: 100vh;
+    }
+  
+    .parallax-content {
+      animation: bgAnimation 10s linear infinite alternate; /* анимация контента */
+    }
+  
+    @keyframes bgAnimation {
+      0% {
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(10px);
+      }
+    }
+  }

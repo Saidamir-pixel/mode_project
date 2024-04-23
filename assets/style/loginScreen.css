@@ -1,0 +1,253 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(90deg, rgb(168, 86, 201) 0%, rgb(168, 86, 201) 3%, rgb(140, 74, 173) 3%, rgb(140, 74, 173) 11%, rgb(112, 61, 145) 11%, rgb(112, 61, 145) 20%, rgb(85, 49, 118) 20%, rgb(85, 49, 118) 49%, rgb(57, 37, 90) 49%, rgb(57, 37, 90) 71%, rgb(29, 24, 62) 71%, rgb(29, 24, 62) 72%, rgb(1, 12, 34) 72%, rgb(1, 12, 34) 100%), linear-gradient(67.5deg, rgb(168, 86, 201) 0%, rgb(168, 86, 201) 3%, rgb(140, 74, 173) 3%, rgb(140, 74, 173) 11%, rgb(112, 61, 145) 11%, rgb(112, 61, 145) 20%, rgb(85, 49, 118) 20%, rgb(85, 49, 118) 49%, rgb(57, 37, 90) 49%, rgb(57, 37, 90) 71%, rgb(29, 24, 62) 71%, rgb(29, 24, 62) 72%, rgb(1, 12, 34) 72%, rgb(1, 12, 34) 100%), linear-gradient(112.5deg, rgb(168, 86, 201) 0%, rgb(168, 86, 201) 3%, rgb(140, 74, 173) 3%, rgb(140, 74, 173) 11%, rgb(112, 61, 145) 11%, rgb(112, 61, 145) 20%, rgb(85, 49, 118) 20%, rgb(85, 49, 118) 49%, rgb(57, 37, 90) 49%, rgb(57, 37, 90) 71%, rgb(29, 24, 62) 71%, rgb(29, 24, 62) 72%, rgb(1, 12, 34) 72%, rgb(1, 12, 34) 100%), linear-gradient(45deg, rgb(168, 86, 201) 0%, rgb(168, 86, 201) 3%, rgb(140, 74, 173) 3%, rgb(140, 74, 173) 11%, rgb(112, 61, 145) 11%, rgb(112, 61, 145) 20%, rgb(85, 49, 118) 20%, rgb(85, 49, 118) 49%, rgb(57, 37, 90) 49%, rgb(57, 37, 90) 71%, rgb(29, 24, 62) 71%, rgb(29, 24, 62) 72%, rgb(1, 12, 34) 72%, rgb(1, 12, 34) 100%), linear-gradient(90deg, rgb(95, 3, 74), rgb(35, 65, 96));
+  background-blend-mode: overlay, overlay, overlay, overlay, normal;
+}
+
+.message-container {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+  text-align: center;
+  padding: 10px 0 20px 0;
+  color: white;
+}
+
+.alert {
+  background-color: black;
+  color: white;
+  border: 2px solid #5d4e78; /* Темно-фиолетовые границы */
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px 0;
+  display: inline-block;
+}
+
+
+.login-container {
+    background-image: url('/assets/pictures/soloFire.jpg');
+    background-size: cover; 
+    background-position: center; 
+    -webkit-box-shadow: 0 3px 22.5px 9.5px #dddddd;
+    -moz-box-shadow: 0 3px 22.5px 9.5px #dddddd;
+    box-shadow: 0 3px 22.5px 9.5px #dddddd;
+
+    padding: 30px;
+    border-radius: 10px;
+
+    max-width: 400px;
+    min-height: 200px;
+    margin: auto;
+}
+
+.login-container input {
+    padding: 6px 12px;
+    background: rgb(31, 32, 35);
+    border: 1px solid rgb(60, 63, 68);
+    border-radius: 4px;
+    font-size: 13px;
+    color: rgb(247, 248, 248);
+    height: 36px;
+    appearance: none;
+    transition: border 0.15s ease 0s;
+    min-width: 95%;
+}
+.login-container input:focus{
+    outline: none;
+    box-shadow: none;
+    border-color: rgb(100, 153, 255);
+}
+
+.login-container label {
+    text-shadow: 1px 1px 2px black;
+    color: #ffffff; 
+    font-family: 'Raleway',sans-serif; 
+    font-size: 15px; 
+    font-weight: 800; 
+    line-height: 72px; 
+    margin: 0 0 14px; 
+    text-transform: uppercase
+}
+
+.login-container h2 {
+    text-shadow: 1px 1px 2px black;
+    color: #ffffff; 
+    font-family: 'Raleway',sans-serif; 
+    font-size: 31px; 
+    font-weight: 800; 
+    line-height: 72px; 
+    margin: 0 0 24px; 
+    text-transform: uppercase
+}
+
+.buttons {
+    display: flex;
+    gap: 50px;
+}
+
+.buttons a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.button-49,
+.button-49:after {
+    margin-top: 50px;
+    margin-bottom: -20px;
+    width: 100px;
+    height: 50px;
+    line-height: 78px;
+    font-size: 20px;
+    font-family: 'Bebas Neue', sans-serif;
+    background: linear-gradient(45deg, transparent 5%, #a000f6 5%);
+    border: 0;
+    color: #fff;
+    letter-spacing: 3px;
+    outline: transparent;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-49:after {
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --slice-4: inset(40% -6px 43% 0);
+  --slice-5: inset(80% -6px 5% 0);
+  
+  margin-top: 50px;
+  content: 'GLITCH';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, #7100ad 5%);
+  text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #00E6F6;
+  clip-path: var(--slice-0);
+}
+
+.button-49:hover:after {
+  animation: 1s glitch;
+  animation-timing-function: steps(2, end);
+}
+
+@keyframes glitch {
+  0% {
+    clip-path: var(--slice-1);
+    transform: translate(-20px, -10px);
+  }
+  10% {
+    clip-path: var(--slice-3);
+    transform: translate(10px, 10px);
+  }
+  20% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 10px);
+  }
+  30% {
+    clip-path: var(--slice-3);
+    transform: translate(0px, 5px);
+  }
+  40% {
+    clip-path: var(--slice-2);
+    transform: translate(-5px, 0px);
+  }
+  50% {
+    clip-path: var(--slice-3);
+    transform: translate(5px, 0px);
+  }
+  60% {
+    clip-path: var(--slice-4);
+    transform: translate(5px, 10px);
+  }
+  70% {
+    clip-path: var(--slice-2);
+    transform: translate(-10px, 10px);
+  }
+  80% {
+    clip-path: var(--slice-5);
+    transform: translate(20px, -10px);
+  }
+  90% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 0px);
+  }
+  100% {
+    clip-path: var(--slice-1);
+    transform: translate(0);
+  }
+}
+
+@media (min-width: 768px) {
+  .button-49 {
+    margin: 35px 5px 35px 5px;
+    width: 105px;
+    height: 65px;
+    line-height: 1;
+  }
+
+  .button-49:after {
+    width: 105px;
+    height: 86px;
+    line-height: 2;
+  }
+}
+
+@media (max-width: 800px){
+
+  .button-49 {
+    margin: 35px 5px 35px 5px;
+    width: 120px;
+    height: 65px;
+    line-height: 0;
+    font-size: 15px;
+  }
+
+  .login-container h2 {
+    font-size: 20px; 
+    font-weight: 800; 
+    line-height: 36px; 
+    margin: 0 0 12px; 
+  }
+
+  .login-container label {
+    font-size: 10px;
+    line-height: 10px;
+  }
+
+  .login-container {
+    background-position: center; 
+
+    padding: 15px;
+    border-radius: 5px;
+
+    max-width: 230px;
+    min-height: 100px;
+    margin: auto;
+  }
+
+
+  .button-49,
+  .button-49:after {
+    line-height: 1;
+    max-width: 140px;
+    height: 43px;
+  }
+}
+
+
+
+
+
